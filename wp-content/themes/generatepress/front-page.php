@@ -240,14 +240,26 @@
         <?php endif; ?>
       </li>
       <li>
-        <a class="c-button c-join">
-          Faire un don
-        </a>
+        <?php 
+
+        if( $lien_don ): 
+          $lien_don_url = $lien_don['url'];
+          $lien_don_title = $lien_don['title'];
+          $lien_don_target = $lien_don['target'] ? $lien_don['target'] : '_self';
+          ?>
+          <a class="c-button c-join" href="<?php echo esc_url($lien_don_url); ?>" target="<?php echo esc_attr($lien_don_target); ?>"><?php echo esc_html($lien_don_title); ?></a>
+        <?php endif; ?>
       </li>
       <li>
-        <a class="c-button c-join">
-          Facebook
-        </a>
+        <?php 
+
+        if( $lien_facebook ): 
+          $lien_facebook_url = $lien_facebook['url'];
+          $lien_facebook_title = $lien_facebook['title'];
+          $lien_facebook_target = $lien_facebook['target'] ? $lien_facebook['target'] : '_self';
+          ?>
+          <a class="c-button c-join" href="<?php echo esc_url($lien_facebook_url); ?>" target="<?php echo esc_attr($lien_facebook_target); ?>"><?php echo esc_html($lien_facebook_title); ?></a>
+        <?php endif; ?>
       </li>
       <li>
         <?php 
